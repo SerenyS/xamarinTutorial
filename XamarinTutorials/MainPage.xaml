@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinTutorials.MainPage">
+
+    <StackLayout Margin="20,35,20,25">
+        <Label 
+            TextColor="Black"
+            FontSize="Large"
+            Text="ONE">
+        </Label>
+
+        <Label TextColor="White"
+           VerticalOptions="FillAndExpand"
+           BackgroundColor="Black">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="There only  " />
+                    <Span Text="one thing, "
+                  FontAttributes="Italic" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label 
+            TextColor="Black"
+            FontSize="Large"
+            Text="TWO">
+        </Label>
+
+        <Label TextColor="White"
+           VerticalOptions="FillAndExpand"
+           BackgroundColor="Black">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="to" FontAttributes="Bold" />
+                    <Span Text=" do, "
+                  FontAttributes="Italic" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label 
+            TextColor="Black"
+            FontSize="Large"
+            Text="THREE">
+        </Label>
+
+        <Label TextColor="White"
+           VerticalOptions="FillAndExpand"
+           BackgroundColor="Black">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="three" FontAttributes="Bold" />
+                    <Span Text=" words, "
+                  FontAttributes="Italic" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label 
+            TextColor="Black"
+            FontSize="Large"
+            Text="FOUR">
+        </Label>
+
+        <Label TextColor="White"
+           VerticalOptions="FillAndExpand"
+           BackgroundColor="Black">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="For you" FontAttributes="Bold" />
+                    <Span Text=" I LOVE YOU! "
+                  FontAttributes="Italic" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button Text="Click for Song"
+                Clicked="clickedSong"
+                />
+        <Label 
+            TextColor="Black"
+            FontSize="Large"
+            Text="What's your favorite verse?">
+        </Label>
+
+        <Slider x:Name="slider"
+                Maximum="4"
+                VerticalOptions="CenterAndExpand">
+
+        </Slider>
+
+        <Label BindingContext="{x:Reference slider}"
+               Text="{Binding Value, StringFormat='Your chosen verse is {0:F0}'}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+
+        <Entry Placeholder="Why do you like this verse?"
+       TextChanged="OnEntryTextChanged"
+       Completed="OnEntryCompleted" />
+
+    </StackLayout>
+
+</ContentPage>
